@@ -16,7 +16,7 @@ class DialogInput extends PureComponent{
   }
 
   handleOnRequestClose = () => {
-    this.props.closeDialog();
+    this.props.closeDialog({reason: 'backdrop'});
     this.setState({ inputModal: '' });
   };
 
@@ -29,7 +29,7 @@ class DialogInput extends PureComponent{
   };
 
   handleOnCloseDialog = () => {
-    this.props.closeDialog(true);
+    this.props.closeDialog({reason: 'negative'});
     this.setState({ inputModal: '',openning: true });
   };
 

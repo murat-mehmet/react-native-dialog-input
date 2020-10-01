@@ -29,7 +29,7 @@ class DialogInput extends PureComponent{
   };
 
   handleOnCloseDialog = () => {
-    this.props.closeDialog();
+    this.props.closeDialog(true);
     this.setState({ inputModal: '',openning: true });
   };
 
@@ -65,7 +65,7 @@ class DialogInput extends PureComponent{
         visible={this.props.isDialogVisible}
       	onRequestClose={this.handleOnRequestClose}>
         <View style={[styles.container, {...modalStyleProps}]}  >
-          <TouchableOpacity style={styles.container} activeOpacity={1} onPress={this.handleOnCloseDialog}>
+          <View style={styles.container}>
             <View style={[styles.modal_container, {...dialogStyleProps}]} >
               <View style={styles.modal_body} >
                 <Text style={styles.title_modal}>{title}</Text>
@@ -99,7 +99,7 @@ class DialogInput extends PureComponent{
                 </TouchableOpacity>
               </View>
             </View>
-          </TouchableOpacity>
+          </View>
         </View>
       </Modal>
     );
